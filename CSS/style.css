@@ -1,0 +1,52 @@
+
+.bck_grnd{
+  background-color: F3F3F4;
+}
+
+.title_background{
+  background-color: 4E4E4E;
+}
+.butn{
+  background-color: 4E4E4E;
+  color: black;
+  border:1px solid black;
+  padding: 5px;
+}
+.butn a{
+  text-decoration: none;
+  font-size: 10px;
+  padding: 5px;
+}
+.butn:hover{
+  background-color: grey;
+  color: black;
+}
+.butn:active{
+  background-color: white;
+}
+.footer{
+  background-color:;
+  text-align:center;
+  padding:10px;
+  margin-top:7px;
+}
+
+.image-container{
+
+
+}
+.hover-action:hover {
+  text-decoration: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+
+}
+
+
+
+#image-style{
+  padding: 3%;
+
+}
+a:hover{
+  text-decoration: none;
+}
