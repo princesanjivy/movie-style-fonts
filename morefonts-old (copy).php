@@ -8,10 +8,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="style-old.css">
-	<link rel="stylesheet" type="text/css" href="loader.css">
 	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-	
 
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,97 +17,68 @@
 	<meta name="author" content="Prince Sanjivy" />
 
 	<link rel="icon" sizes="16x16" href="images/Favicon.png">
-
-	<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.10/webfont.js"></script>
-	<script>
-	  WebFont.load({
-	    custom: {
-	      families: ['Title','Tagline','Content','Footer']
-	    }
-	  });
-	</script>
-
+	<link rel="stylesheet" type="text/css" href="style-old.css">
 </head>
 <body>
 
-	<!-- <div id="loader">
-		<img src="images/loader.gif">
-	</div>
-	<script type="text/javascript">
-	   		var loader = document.getElementById("loader");
-	  		window.addEventListener("load",function(){
-	  			loader.style.visibility = "hidden";
-	  });
-	</script> -->
-
 	<!-- Facebook Sdk -->
-	<!-- <div id="fb-root"></div>
+	<div id="fb-root"></div>
 	<script>(function(d, s, id) {
 	  var js, fjs = d.getElementsByTagName(s)[0];
 	  if (d.getElementById(id)) return;
 	  js = d.createElement(s); js.id = id;
 	  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.1&appId=1652468381508336&autoLogAppEvents=1';
 	  fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));</script> -->
+	}(document, 'script', 'facebook-jssdk'));</script>
 
 	<!-- Jumbotron -->
 	<div class="jumbotron" style="background-image: url(images/Background.jpg); height: auto; background-repeat: no-repeat; background-size: cover; background-attachment: fixed;">
 		<div data-aos="fade-right" data-aos-duration="1000" class="Heading">PRINCE WEB STUDIO's</div>
-		<div class="container" style="padding-top: 180px;">
-			
-			<center>
-				<div data-aos="fade-right" data-aos-duration="1200" data-aos-once="true"><h2>Movie Style Fonts</h2></div>
-				<div data-aos="fade-right" data-aos-duration="1500" data-aos-once="true">
-					<h3>Get Your name in your favourite<br>Movie Font.</h3>
-				</div>
-				<br><br><br><br><br>
-				<?php
-					function isMobile() {
-    					return preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i", $_SERVER["HTTP_USER_AGENT"]);
-					}
-
-					if(!isMobile()){
-						echo '
-							<div data-aos="fade-right" data-aos-duration="1800" data-aos-once="true">
-								<a href="https://play.google.com/store/apps/details?id=com.princewebstudio.msfonts" target="_blank">
-									<img src="images/PlayButton.png" width="150" height="57" alt="PlayButton">
-								</a>
-							</div>
-						';
-					}
-				?>
-				
-			</center>
-
-		</div>	
 	</div>
 
 	<!--  Content -->
 	<div class="container" style="padding-top: 50px;">
-		<div data-aos="fade-right" data-aos-duration="1000" data-aos-once="true"><h4 style="font-style: italic;">Please use #moviestylefonts for sharing.</h4></div>
-		<br>
-		<div data-aos="fade-right" data-aos-duration="1000" data-aos-once="true"><h4 style="font-style: italic;">"New Movie Fonts"</h4></div>
-		<br>
-		
-		<br>
+
+		<div data-aos="fade-right" data-aos-duration="1000" data-aos-once="true"><h4>Movie Style Fonts.</h4></div>
+		<br><br>
 		<div class="row">
 
-			<!-- Master Movie -->
+			<!-- MrLocal Movie -->
 			<div class="col-md-4" data-aos="fade-right" data-aos-duration="1200" data-aos-once="true">
 				<div class="font-display">
-					<a href="Master.php">
+					<a href="MrLocal.php">
 
-						<div class="movie-cover" style="background-image: url(images/Master_yourname.png);">
+						<div class="movie-cover" style="background-image: url(images/MrLocal_yourname.jpg);">
 							<div class="movie-desc">
-								<p>Get your name in Master movie style.</p>
+								<p>Get your name in Mr.Local movie style.</p>
 							</div>
 						</div>
 
 						<div class="text-center">
-							<label><br>Master</label>
+							<label><br>Mr.Local</label>
+						</div>
+
+					</a>
+				</div>
+			</div>
+			<!-- End -->
+
+			<!-- Petta Movie -->
+			<div class="col-md-4" data-aos="fade-right" data-aos-duration="1200" data-aos-once="true">
+				<div class="font-display">
+					<a href="Petta.php">
+
+						<div class="movie-cover" style="background-image: url(images/Petta_yourname.jpg);">
+							<div class="movie-desc">
+								<p>Get your name in Petta movie style.</p>
+							</div>
+						</div>
+
+						<div class="text-center">
+							<label><br>Petta</label>
 							<br>
 							<?php
-								$file = fopen("txt/Master.txt", "r");
+								$file = fopen("txt/Petta.txt", "r");
 								$views = fgets($file,1000);
 								echo ' <i class="fa fa-eye"> ' .$views. ' </i> ';
 							?>
@@ -122,22 +90,22 @@
 			</div>
 			<!-- End -->
 
-			<!-- Darbar Movie -->
+			<!-- Mikhael Movie -->
 			<div class="col-md-4" data-aos="fade-right" data-aos-duration="1200" data-aos-once="true">
 				<div class="font-display">
-					<a href="Darbar.php">
+					<a href="Mikhael.php">
 
-						<div class="movie-cover" style="background-image: url(images/Darbar_yourname.jpg);">
+						<div class="movie-cover" style="background-image: url(images/Mikhael_yourname.jpg);">
 							<div class="movie-desc">
-								<p>Get your name in Darbar movie style.</p>
+								<p>Get your name in Mikhael movie style.</p>
 							</div>
 						</div>
 
 						<div class="text-center">
-							<label><br>Darbar</label>
+							<label><br>Mikhael</label>
 							<br>
 							<?php
-								$file = fopen("txt/Darbar.txt", "r");
+								$file = fopen("txt/Mikhael.txt", "r");
 								$views = fgets($file,1000);
 								echo ' <i class="fa fa-eye"> ' .$views. ' </i> ';
 							?>
@@ -149,22 +117,22 @@
 			</div>
 			<!-- End -->
 
-			<!-- Rajini Murugan Movie -->
+			<!-- Kanaa Movie -->
 			<div class="col-md-4" data-aos="fade-right" data-aos-duration="1200" data-aos-once="true">
 				<div class="font-display">
-					<a href="Rajinimurugan.php">
+					<a href="Kanaa.php">
 
-						<div class="movie-cover" style="background-image: url(images/Rajinimurugan_yourname.jpg);">
+						<div class="movie-cover" style="background-image: url(images/Kanaa_yourname.jpg);">
 							<div class="movie-desc">
-								<p>Get your name in Rajini Murugan movie style.</p>
+								<p>Get your name in Kanaa movie style.</p>
 							</div>
 						</div>
 
 						<div class="text-center">
-							<label><br>Rajini Murugan</label>
+							<label><br>Kanaa</label>
 							<br>
 							<?php
-								$file = fopen("txt/RajiniMurugan.txt", "r");
+								$file = fopen("txt/Kanaa.txt", "r");
 								$views = fgets($file,1000);
 								echo ' <i class="fa fa-eye"> ' .$views. ' </i> ';
 							?>
@@ -176,46 +144,244 @@
 			</div>
 			<!-- End -->
 
-			
+			<!-- Avengers_EndGame Movie -->
+			<div class="col-md-4" data-aos="fade-right" data-aos-duration="1200" data-aos-once="true">
+				<div class="font-display">
+					<a href="Avengers_EndGame.php">
 
+						<div class="movie-cover" style="background-image: url(images/Avengers_EndGame_yourname.jpg);">
+							<div class="movie-desc">
+								<p>Get your name in Avengers EndGame movie style.</p>
+							</div>
+						</div>
+
+						<div class="text-center">
+							<label><br>Avengers EndGame</label>
+							<br>
+							<?php
+								$file = fopen("txt/Avengers_EndGame.txt", "r");
+								$views = fgets($file,1000);
+								echo ' <i class="fa fa-eye"> ' .$views. ' </i> ';
+							?>
+							<br><br>
+						</div>
+
+					</a>
+				</div>
+			</div>
+			<!-- End -->
+
+			<!-- Aquaman Movie -->
+			<div class="col-md-4" data-aos="fade-right" data-aos-duration="1200" data-aos-once="true">
+				<div class="font-display">
+					<a href="Aquaman.php">
+
+						<div class="movie-cover" style="background-image: url(images/Aquaman_yourname.jpg);">
+							<div class="movie-desc">
+								<p>Get your name in Aquaman movie style.</p>
+							</div>
+						</div>
+
+						<div class="text-center">
+							<label><br>Aquaman</label>
+							<br>
+							<?php
+								$file = fopen("txt/Aquaman.txt", "r");
+								$views = fgets($file,1000);
+								echo ' <i class="fa fa-eye"> ' .$views. ' </i> ';
+							?>
+							<br><br>
+						</div>
+
+					</a>
+				</div>
+			</div>
+			<!-- End -->
+
+			<!-- Dhruva Natchathiram Movie -->
+			<div class="col-md-4" data-aos="fade-right" data-aos-duration="1200" data-aos-once="true">
+				<div class="font-display">
+					<a href="Dhruva.php">
+
+						<div class="movie-cover" style="background-image: url(images/Dhruva_yourname.jpg);">
+							<div class="movie-desc">
+								<p>Get your name in Dhruva Natchathiram movie style.</p>
+							</div>
+						</div>
+
+						<div class="text-center">
+							<label><br>Dhruva Natchathiram</label>
+							<br>
+							<?php
+								$file = fopen("txt/Dhruva.txt", "r");
+								$views = fgets($file,1000);
+								echo ' <i class="fa fa-eye"> ' .$views. ' </i> ';
+							?>
+							<br><br>
+						</div>
+
+					</a>
+				</div>
+			</div>
+			<!-- End -->
+
+
+			<!-- 96 Movie -->
+			<div class="col-md-4" data-aos="fade-right" data-aos-duration="1200" data-aos-once="true">
+				<div class="font-display">
+					<a href="96.php">
+
+						<div class="movie-cover" style="background-image: url(images/96_yourname.png);">
+							<div class="movie-desc">
+								<p>Get your name in 96 movie style.</p>
+							</div>
+						</div>
+
+						<div class="text-center">
+							<label><br>96</label>
+							<br>
+							<?php
+								$file = fopen("txt/96.txt", "r");
+								$views = fgets($file,1000);
+								echo ' <i class="fa fa-eye"> ' .$views. ' </i> ';
+							?>
+							<br><br>
+						</div>
+
+					</a>
+				</div>
+			</div>
+			<!-- End -->
+
+			<!-- Thimiru Pudichavan Movie -->
+			<div class="col-md-4" data-aos="fade-right" data-aos-duration="1200" data-aos-once="true">
+				<div class="font-display">
+					<a href="ThimiruPudichavan.php">
+
+						<div class="movie-cover" style="background-image: url(images/ThimiruPudichavan_yourname.jpg);">
+							<div class="movie-desc">
+								<p>Get your name in Thimiru Pudichavan movie style.</p>
+							</div>
+						</div>
+
+						<div class="text-center">
+							<label><br>Thimiru Pudichavan</label>
+							<br>
+							<?php
+								$file = fopen("txt/Thimiru Pudichavan.txt", "r");
+								$views = fgets($file,1000);
+								echo ' <i class="fa fa-eye"> ' .$views. ' </i> ';
+							?>
+							<br><br>
+						</div>
+
+					</a>
+				</div>
+			</div>
+			<!-- End -->
+
+			<!-- Remo Movie -->
+			<div class="col-md-4" data-aos="fade-right" data-aos-duration="1200" data-aos-once="true">
+				<div class="font-display">
+					<a href="Remo.php">
+
+						<div class="movie-cover" style="background-image: url(images/RemoYourname.jpg);">
+							<div class="movie-desc">
+								<p>Get your name in Remo movie style.</p>
+							</div>
+						</div>
+
+						<div class="text-center">
+							<label><br>Remo</label>
+							<br>
+							<?php
+								$file = fopen("txt/Remo.txt", "r");
+								$views = fgets($file,1000);
+								echo ' <i class="fa fa-eye"> ' .$views. ' </i> ';
+							?>
+							<br><br>
+						</div>
+
+					</a>
+				</div>
+			</div>
+			<!-- End -->
+
+			<!-- Jurassic Park Movie -->
+			<div class="col-md-4" data-aos="fade-right" data-aos-duration="1200" data-aos-once="true">
+				<div class="font-display">
+					<a href="JurassicPark.php">
+
+						<div class="movie-cover" style="background-image: url(images/JurassicParkYourname.jpg);">
+							<div class="movie-desc">
+								<p>Get your name in Jurassic Park movie style.</p>
+							</div>
+						</div>
+
+						<div class="text-center">
+							<label><br>Jurassic Park</label>
+							<br>
+							<?php
+								$file = fopen("txt/Jurassic Park.txt", "r");
+								$views = fgets($file,1000);
+								echo ' <i class="fa fa-eye"> ' .$views. ' </i> ';
+							?>
+							<br><br>
+						</div>
+
+					</a>
+				</div>
+			</div>
+			<!-- End -->
+
+			<!-- IronMan Movie -->
+			<div class="col-md-4" data-aos="fade-right" data-aos-duration="1200" data-aos-once="true">
+				<div class="font-display">
+					<a href="IronMan.php">
+
+						<div class="movie-cover" style="background-image: url(images/Ironman_yourname.jpg);">
+							<div class="movie-desc">
+								<p>Get your name in Iron Man movie style.</p>
+							</div>
+						</div>
+
+						<div class="text-center">
+							<label><br>Iron Man</label>
+							<br>
+							<?php
+								$file = fopen("txt/IronMan.txt", "r");
+								$views = fgets($file,1000);
+								echo ' <i class="fa fa-eye"> ' .$views. ' </i> ';
+							?>
+							<br><br>
+						</div>
+
+					</a>
+				</div>
+			</div>
+			<!-- End -->
 
 
 		</div>
 
-		<!-- More Fonts Button -->
+		<br>
+		<!-- Home Button -->
 		<div data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
 			<center>
-				<a class="btn" style="font-size: 20px;" href="morefonts.php">More Fonts</a>
+				<a class="btn" style="font-size: 20px;" href="/">Home</a>
+				<a class="btn" style="font-size: 20px;" href="morefonts1.php">Next</a>
 			</center>
 		</div>
 
 	</div>
 	
-	<br>
-	<br>
-
-	<!-- Ads -->
-
-<!-- 	<center>
-	<script type="text/javascript">
-			  ( function() {
-			    if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
-			    var unit = {"calltype":"async[2]","publisher":"princesanjivy","width":320,"height":50,"sid":"Chitika Default"};
-			    var placement_id = window.CHITIKA.units.length;
-			    window.CHITIKA.units.push(unit);
-			    document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
-			}());
-			</script>
-	<script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
-	</center> -->
-
 	<!-- Suggestion -->
 	<br><br>
 	<div data-aos="fade-up" data-aos-duration="1500" data-aos-once="true">
 		<form action="" method="POST">
 			<center>
-				<label>New movie fonts every sundays!</label><br>
-				<label>Which Movie Font you want us to do next?</label>
+				<label>New movie fonts every sundays!</label><br><br>
+				<label>Didn't find your favourite ones,Tell us here to get yours!</label>
 				<input type="text" placeholder="Movie Name" maxlength="30" name="query" required=""><br>
 				<input type="submit" value="Submit" class="btn" name="subButton">
 			</center>
@@ -302,7 +468,7 @@
 
 						$IP = base64_encode( getenv ('REMOTE_ADDR'));
 						$add = true;
-						$hits = 29445;
+						$hits = 14140;
 
 						// To write
 						$h = fopen ($log, 'r');

@@ -121,7 +121,8 @@ input[type=text]:focus{
 
 .font-display > a:hover .movie-desc {
   opacity: 1;
-  background-color: white;
+  height: 100%;
+  background-color: blue;
 }
 
 .font-display .movie-cover {
@@ -134,11 +135,11 @@ input[type=text]:focus{
   height: 300px;
 }
 
-@media screen and (max-width: 768px) {
+/*@media screen and (max-width: 768px) {
   .font-display .movie-cover {
     height: 400px;
   }
-}
+}*/
 
 .font-display .movie-cover .movie-desc {
   position: relative;
@@ -157,4 +158,23 @@ input[type=text]:focus{
 .font-display .movie-cover .movie-desc p {
   color: #8f989f;
   font-weight: 900;
+}
+
+
+.my-card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 100%;
+  /*height: 50px;*/
+  margin-top: 50px;
+  border-radius: 25px;
+}
+
+.my-card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);	
+}
+
+.im {
+	border-radius: 25px 25px 0 0;
+	height: 300px;
 }
