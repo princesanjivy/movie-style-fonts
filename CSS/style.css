@@ -1,16 +1,54 @@
 
+
+<!-- old --!>
+
+
+@font-face {
+  font-family: Title;
+  src: url(fonts/Titlefont.ttf);
+}
+
+@font-face {
+  font-family: Footer;
+  src: url(fonts/Footerfont.ttf);
+}
+
+@font-face {
+  font-family: Tagline;
+  src: url(fonts/Taglinefont.ttf);
+}
+
+@font-face {
+  font-family: Content;
+  src: url(fonts/Contentfont.ttf);
+}
+
 .bck_grnd{
   background-color: F3F3F4;
 }
 
 .title_background{
-  background-color: 4E4E4E;
+  background-color: #4E4E4E;
 }
+h1 {
+  font-family: Title;
+  color: white;
+  font-size:;
+}
+
+p {
+  font-family: Content;
+  font-size: 20px;
+  font-weight: normal;
+}
+
 .butn{
-  background-color: 4E4E4E;
-  color: black;
-  border:1px solid black;
-  padding: 5px;
+
+    font-size: 15px;
+    font-family: Tagline;
+      background-color: white;
+      color: black;
+      border: 2px solid #555555;
 }
 .butn a{
   text-decoration: none;
@@ -18,11 +56,14 @@
   padding: 5px;
 }
 .butn:hover{
-  background-color: grey;
-  color: black;
+  font-size: 15px;
+  font-family: Tagline;
+    background-color: #555555;
+    color: white;
 }
 .butn:active{
-  background-color: white;
+  background-color:#ccffcc;
+  color: black;
 }
 .footer{
   background-color:;
@@ -31,13 +72,54 @@
   margin-top:7px;
 }
 
-.image-container{
 
 
-}
 .hover-action:hover {
-  text-decoration: none;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+  position: hidden;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  opacity: 0;
+  padding: 30px;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+input[type=text] {
+    width: 300px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    background: transparent;
+    border: 2px solid grey;
+    border-radius: 6px;
+    font-family: Content;
+}
+
+input[type=text]:focus{
+  border-color: lightgrey;
+}
+
+
+.image-container{
+  width: 100%;
+  float: left;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+  font-weight: 900;
+  max-height: inherit;
+}
+@media screen and (max-width: 768px) {
+  .image-container {
+    height: 50%;
+  }
+}
+.image-container{
 
 }
 
