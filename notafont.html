@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Movie Style Fonts - NOTA</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
+
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="styles.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Get your name in NOTA movie font style." />
+        <meta name="keywords" content="movie fonts, NOTA, movie font style, your name, NOTA movie name style, NOTA movie" />
+        <meta name="author" content="Ashok, Prince Sanjivy">
+        <link rel="icon" sizes="16x16" href="images/Favicon.png">
+    </head>
+    <body>
+        <!-- Jumbotron -->
+        <div class="jumbotron" style="background-image: url(images/bg.jpg); height: auto; background-repeat: no-repeat; background-size: cover; background-attachment: fixed;">
+            <div data-aos="fade-right" data-aos-duration="1000" class="Heading">Movie Style Fonts</div>
+        </div>
+        <!--  Content -->
+        <div class="container" style="padding-top: 50px;">
+            <div data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
+                <h4>NOTA</h4>
+            </div>
+            <br><br>
+            <div class="row">
+                <div class="col-md-6" class="my-card"  data-aos="fade-right" data-aos-duration="1300" data-aos-once="true">
+                    <img class="img-thumbnail" src="images/NOTAyourname.jpg" id="imgyourname">
+                    <img class="img-thumbnail" id="imgpreview" style="display: none;">
+                </div>
+                <br>
+                <br>
+                <div class="col-md-6"  data-aos="fade-right" data-aos-duration="1300" data-aos-once="true">
+                    <label>
+                        <ul>
+                            <li>Give your name in less than 10 characters for better result.</li>
+                            <li>Please don't use any special characters.</li>
+                            <li>Maximum only 15 characters.</li>
+                            <li>Hit preview to get the image.</li>
+                            <li>Image resolution 1000x1563 px</li>
+                            <li>Share your with #moviestylefonts</li>
+                            <li>If you not getting try refreshing your browser.</li>
+                            <br>
+                        </ul>
+                    </label>
+                    <p style="font-size: 22px; font-weight: bolder; color: 	#4d4d4d;">Enter your name</p>
+                    <div id="myCanvas" style="display: none;"></div>
+                    <input type="text" placeholder="yourname" id="yourname" maxlength="15" required>
+                    <input type="button" value="Preview" class="btn" onclick="init()" id="previewBtn" style="display: inline-block; position: relative">
+                    <img src="images/loader.gif" style="display: none;" id="loading">
+                    <input type="button" value="Download" class="btn" id="downloadBtn" style="display: none;">
+                    <input type="button" value="Reset" class="btn" id="resetBtn" style="display: inline-block; position: relative">
+            </div>
+        </div>
+        <br>
+        <!-- Home Button -->
+        <div data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
+            <center>
+                <a class="btn" style="font-size: 20px;" href="/">Home</a>
+            </center>
+        </div>
+        </div>
+        <!-- Content Ends -->
+        <br><br>
+        <!-- Footer -->
+        <footer>
+            <div style="background-image: url(images/bg.jpg); width: 100%; height: 100%;  background-repeat: no-repeat; background-size: 100% 100%; background-attachment: fixed;">
+                <div style="padding-top: 30px; font-size: 25px;">
+                    <center>
+                        <br>
+                        <!-- Facebook -->
+                        <div data-aos="fade-right" data-aos-duration="1600" data-aos-once="true">
+                            <i class="fa fa-facebook" style="color: white;">
+                            <a href="https://www.facebook.com/princewebstudio/" target="_blank" style="font-family: Footer; font-weight: bolder; color: white; text-decoration: none;">
+                            Facebook
+                            </a>
+                            </i>
+                        </div>
+                        <!-- Instagram -->
+                        <div data-aos="fade-right" data-aos-duration="1700" data-aos-once="true">
+                            <i class="fa fa-instagram" style="color: white;">
+                            <a href="https://www.instagram.com/moviestylefonts/" target="_blank" style="font-family: Footer; font-weight: bolder; color: white; text-decoration: none;">
+                            Instagram
+                            </a>
+                            </i>
+                        </div>
+                    </center>
+                </div>
+                <br><br>
+                <div style="padding-left: 10px; color: white; font-family: Footer;">
+                    &copy; copyrights Movie Style Fonts.<br>
+                    with ❤️ developed by <a href="https://www.instagram.com/ashokangappan/" target="_blank">Ashok</a> &
+                    <a href="https://www.instagram.com/princesanjivy/" target="_blank">Prince Sanjivy</a>
+                </div>
+            </div>
+        </footer>
+        <script type="text/javascript">
+            AOS.init();
+
+            let check = false;
+
+            const s = (sketch) => {
+            let bg_image, movie_font;
+            let myCanvas;
+
+            let yourname = document.getElementById("yourname").value;
+            let btn_download = document.getElementById("downloadBtn");
+            let btn_preview = document.getElementById("previewBtn");
+            let img_preview = document.getElementById("imgyourname");
+            let btn_reset = document.getElementById("resetBtn");
+
+            sketch.preload = () => {
+            bg_image = sketch.loadImage("./images/NOTA.jpg");
+            movie_font = sketch.loadFont("./fonts/NOTAfont.ttf");
+            };
+
+            sketch.setup = () => {
+            myCanvas = sketch.createCanvas(bg_image.width, bg_image.height);
+            sketch.image(bg_image, 0, 0);
+
+            sketch.textFont(movie_font);
+            if (yourname.length>9) {
+              sketch.textSize(100);
+            }
+            else if (yourname.length>=7&&yourname.length<=8) {
+              sketch.textSize(145);
+            }
+            else {
+              sketch.textSize(200);
+            }
+
+            let mycolor = sketch.color("red");
+            sketch.fill(mycolor);
+
+            sketch.textAlign(sketch.CENTER, sketch.CENTER);
+            sketch.text(yourname.toUpperCase(), 500, 1150);
+
+            if(check) {
+            	img_preview.style.display = "block";
+            	img_preview.src = myCanvas.elt.toDataURL();
+
+                document.getElementById("downloadBtn").style.display = "block";
+                document.getElementById("previewBtn").style.display = "none";
+                document.getElementById("loading").style.display = "none";
+            }
+            };
+
+            btn_download.onclick = () => {
+            sketch.saveCanvas(yourname, "jpg");
+            };
+
+            btn_reset.onclick = () => {
+            document.getElementById("downloadBtn").style.display = "none";
+            document.getElementById("previewBtn").style.display = "block";
+            document.getElementById("yourname").value = "";
+            img_preview.src = "images/NOTA.jpg";
+            };
+            };
+
+            function init() {
+            let myp5 = new p5(s, document.getElementById("myCanvas"));
+            document.getElementById("loading").style.display = "block";
+            check = true;
+            }
+
+        </script>
+    </body>
+</html>
