@@ -1,0 +1,5 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target" : { "namespace": "android_app", "package_name": "com.princewebstudio.customtabs",
+               "sha256_cert_fingerprints": ["ED:1F:D0:74:A1:01:36:9E:EF:18:70:08:3D:CC:D5:55:66:90:03:D0:C8:26:3F:36:08:DD:F3:64:E0:BA:AE:D7"] }
+}]
