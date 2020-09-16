@@ -1,24 +1,22 @@
-
-
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Movie Style Fonts - MOVIE_NAME</title>
+        <title>Movie Style Fonts - Jurassic Park</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/addons/p5.sound.min.js"></script>
+
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="styles.css">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Get your name in 96 movie font style." />
-        <meta name="keywords" content="movie fonts, Mr.Local, movie font style, your name, Mr.Local movie name style, Mr.Local movie" />
+        <meta name="description" content="Get your name in Jurassic Park movie font style." />
+        <meta name="keywords" content="movie fonts, Jurassic Park, movie font style, your name, Jurassic Park movie name style, Jurassic Park movie" />
         <meta name="author" content="Ashok, Prince Sanjivy">
         <link rel="icon" sizes="16x16" href="images/Favicon.png">
     </head>
@@ -30,12 +28,12 @@
         <!--  Content -->
         <div class="container" style="padding-top: 50px;">
             <div data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
-                <h4>Mr.Local</h4>
+                <h4>Jurassic Park</h4>
             </div>
             <br><br>
             <div class="row">
                 <div class="col-md-6" class="my-card"  data-aos="fade-right" data-aos-duration="1300" data-aos-once="true">
-                    <img class="img-thumbnail" src="images/MrLocal_yourname.jpg" id="imgyourname">
+                    <img class="img-thumbnail" src="images/JurassicPark_yourname.jpg" id="imgyourname">
                     <img class="img-thumbnail" id="imgpreview" style="display: none;">
                 </div>
                 <br>
@@ -47,21 +45,19 @@
                             <li>Please don't use any special characters.</li>
                             <li>Maximum only 15 characters.</li>
                             <li>Hit preview to get the image.</li>
-                            <li>Image resolution 1000x1484 px</li>
+                            <li>Image resolution 1280x720 px</li>
                             <li>Share your with #moviestylefonts</li>
                             <li>If you not getting try refreshing your browser.</li>
                             <br>
                         </ul>
                     </label>
                     <p style="font-size: 22px; font-weight: bolder; color: 	#4d4d4d;">Enter your name</p>
-                    <form>
                     <div id="myCanvas" style="display: none;"></div>
                     <input type="text" placeholder="yourname" id="yourname" maxlength="15" required>
                     <input type="button" value="Preview" class="btn" onclick="init()" id="previewBtn" style="display: inline-block; position: relative">
+                    <img src="images/loader.gif" style="display: none;" id="loading">
                     <input type="button" value="Download" class="btn" id="downloadBtn" style="display: none;">
                     <input type="button" value="Reset" class="btn" id="resetBtn" style="display: inline-block; position: relative">
-                    </form>
-                </div>
             </div>
         </div>
         <br>
@@ -111,7 +107,7 @@
 
             let check = false;
 
-            const s = (sketch) => {
+            const s = (sketch) => { 
             let bg_image, movie_font;
             let myCanvas;
 
@@ -122,8 +118,8 @@
             let btn_reset = document.getElementById("resetBtn");
 
             sketch.preload = () => {
-            bg_image = sketch.loadImage("./images/MrLocal.jpg");
-            movie_font = sketch.loadFont("./fonts/MrLocalfont.otf");
+            bg_image = sketch.loadImage("./images/JurassicPark.jpg");
+            movie_font = sketch.loadFont("./fonts/JurassicParkfont.ttf");
             };
 
             sketch.setup = () => {
@@ -131,22 +127,23 @@
             sketch.image(bg_image, 0, 0);
 
             sketch.textFont(movie_font);
-            sketch.textSize(190);
+            sketch.textSize(230);
 
-            let mycolor = sketch.color(240, 255, 79);
+            let mycolor = sketch.color("white");
             sketch.fill(mycolor);
 
             sketch.textAlign(sketch.CENTER, sketch.CENTER);
-            //sketch.tranaslate(100,100);
-            sketch.rotate(20 * Math.PI / 180);
-            sketch.text("Mr."+yourname,600,100);
-
+            sketch.text(yourname, 650, 480);
 
             if(check) {
             	img_preview.style.display = "block";
             	img_preview.src = myCanvas.elt.toDataURL();
+
+                document.getElementById("downloadBtn").style.display = "block";
+                document.getElementById("previewBtn").style.display = "none";
+                document.getElementById("loading").style.display = "none";
             }
-          };5
+            };
 
             btn_download.onclick = () => {
             sketch.saveCanvas(yourname, "jpg");
@@ -155,17 +152,14 @@
             btn_reset.onclick = () => {
             document.getElementById("downloadBtn").style.display = "none";
             document.getElementById("previewBtn").style.display = "block";
-            document.getElementById("yourname").value="";
-            img_preview.src = "./images/MrLocal.jpg";
+            document.getElementById("yourname").value = "";
+            img_preview.src = "images/JurassicPark.jpg";
             };
             };
 
             function init() {
             let myp5 = new p5(s, document.getElementById("myCanvas"));
-
-            document.getElementById("downloadBtn").style.display = "block";
-            document.getElementById("previewBtn").style.display = "none";
-
+            document.getElementById("loading").style.display = "block";
             check = true;
             }
 

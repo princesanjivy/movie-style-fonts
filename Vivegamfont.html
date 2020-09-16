@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Movie Style Fonts - Soorarai Pottru</title>
+        <title>Movie Style Fonts - Vivegam</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -15,8 +15,8 @@
         <link rel="stylesheet" href="styles.css">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Get your name in  Soorarai Pottru movie font style." />
-        <meta name="keywords" content="movie fonts,  Soorarai Pottru, movie font style, your name,  Soorarai Pottru movie name style,  Soorarai Pottru movie" />
+        <meta name="description" content="Get your name in Vivegam movie font style." />
+        <meta name="keywords" content="movie fonts, Vivegam, movie font style, your name, Vivegam movie name style, Vivegam movie" />
         <meta name="author" content="Ashok, Prince Sanjivy">
         <link rel="icon" sizes="16x16" href="images/Favicon.png">
     </head>
@@ -28,12 +28,12 @@
         <!--  Content -->
         <div class="container" style="padding-top: 50px;">
             <div data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
-                <h4> Soorarai Pottru</h4>
+                <h4>Vivegam</h4>
             </div>
             <br><br>
             <div class="row">
                 <div class="col-md-6" class="my-card"  data-aos="fade-right" data-aos-duration="1300" data-aos-once="true">
-                    <img class="img-thumbnail" src="images/Sooraraipottru_yourname.jpg" id="imgyourname">
+                    <img class="img-thumbnail" src="images/Vivegam_yourname.jpg" id="imgyourname">
                     <img class="img-thumbnail" id="imgpreview" style="display: none;">
                 </div>
                 <br>
@@ -45,7 +45,7 @@
                             <li>Please don't use any special characters.</li>
                             <li>Maximum only 15 characters.</li>
                             <li>Hit preview to get the image.</li>
-                            <li>Image resolution 1080x1526 px</li>
+                            <li>Image resolution Vivegam px</li>
                             <li>Share your with #moviestylefonts</li>
                             <li>If you not getting try refreshing your browser.</li>
                             <br>
@@ -118,8 +118,8 @@
             let btn_reset = document.getElementById("resetBtn");
 
             sketch.preload = () => {
-            bg_image = sketch.loadImage("./images/Sooraraipottru.jpg");
-            movie_font = sketch.loadFont("./fonts/Sooraraipottrufont.ttf");
+            bg_image = sketch.loadImage("./images/Vivegam.jpg");
+            movie_font = sketch.loadFont("./fonts/Vivegamfont.ttf");
             };
 
             sketch.setup = () => {
@@ -127,13 +127,20 @@
             sketch.image(bg_image, 0, 0);
 
             sketch.textFont(movie_font);
-            sketch.textSize(160);
+            if (yourname.length>=9) {
+              sketch.textSize(126);
 
-            let mycolor = sketch.color(103, 63, 51);
+            }
+            else{
+              sketch.textSize(150);
+            }
+
+
+            let mycolor = sketch.color(255,25,25);
             sketch.fill(mycolor);
 
             sketch.textAlign(sketch.CENTER, sketch.CENTER);
-            sketch.text(yourname.toLowerCase(), 535,50);
+            sketch.text(yourname,  447, 980);
 
             if(check) {
             	img_preview.style.display = "block";
@@ -153,7 +160,7 @@
             document.getElementById("downloadBtn").style.display = "none";
             document.getElementById("previewBtn").style.display = "block";
             document.getElementById("yourname").value = "";
-            img_preview.src = "./images/Sooraraipottru_yourname.jpg";
+            img_preview.src = "./images/Vivegam.jpg";
             };
             };
 

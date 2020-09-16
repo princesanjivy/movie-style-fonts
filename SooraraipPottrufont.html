@@ -1,24 +1,22 @@
-
-
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Movie Style Fonts - MOVIE_NAME</title>
+        <title>Movie Style Fonts - Soorarai Pottru</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/addons/p5.sound.min.js"></script>
+
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="styles.css">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Get your name in 96 movie font style." />
-        <meta name="keywords" content="movie fonts, Master, movie font style, your name, Master movie name style, Master movie" />
+        <meta name="description" content="Get your name in  Soorarai Pottru movie font style." />
+        <meta name="keywords" content="movie fonts,  Soorarai Pottru, movie font style, your name,  Soorarai Pottru movie name style,  Soorarai Pottru movie" />
         <meta name="author" content="Ashok, Prince Sanjivy">
         <link rel="icon" sizes="16x16" href="images/Favicon.png">
     </head>
@@ -30,12 +28,12 @@
         <!--  Content -->
         <div class="container" style="padding-top: 50px;">
             <div data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
-                <h4>Master</h4>
+                <h4> Soorarai Pottru</h4>
             </div>
             <br><br>
             <div class="row">
                 <div class="col-md-6" class="my-card"  data-aos="fade-right" data-aos-duration="1300" data-aos-once="true">
-                    <img class="img-thumbnail" src="images/Master_yourname.png" id="imgyourname">
+                    <img class="img-thumbnail" src="images/SooraraiPottru_yourname.jpg" id="imgyourname">
                     <img class="img-thumbnail" id="imgpreview" style="display: none;">
                 </div>
                 <br>
@@ -47,21 +45,19 @@
                             <li>Please don't use any special characters.</li>
                             <li>Maximum only 15 characters.</li>
                             <li>Hit preview to get the image.</li>
-                            <li>Image resolution 1000x1113 px</li>
+                            <li>Image resolution 1080x1526 px</li>
                             <li>Share your with #moviestylefonts</li>
                             <li>If you not getting try refreshing your browser.</li>
                             <br>
                         </ul>
                     </label>
                     <p style="font-size: 22px; font-weight: bolder; color: 	#4d4d4d;">Enter your name</p>
-                    <form>
                     <div id="myCanvas" style="display: none;"></div>
                     <input type="text" placeholder="yourname" id="yourname" maxlength="15" required>
                     <input type="button" value="Preview" class="btn" onclick="init()" id="previewBtn" style="display: inline-block; position: relative">
+                    <img src="images/loader.gif" style="display: none;" id="loading">
                     <input type="button" value="Download" class="btn" id="downloadBtn" style="display: none;">
                     <input type="button" value="Reset" class="btn" id="resetBtn" style="display: inline-block; position: relative">
-                    </form>
-                </div>
             </div>
         </div>
         <br>
@@ -122,8 +118,8 @@
             let btn_reset = document.getElementById("resetBtn");
 
             sketch.preload = () => {
-            bg_image = sketch.loadImage("./images/Master.jpg");
-            movie_font = sketch.loadFont("./fonts/Master.ttf");
+            bg_image = sketch.loadImage("images/Sooraraipottru.jpg");
+            movie_font = sketch.loadFont("fonts/Sooraraipottrufont.ttf");
             };
 
             sketch.setup = () => {
@@ -131,17 +127,21 @@
             sketch.image(bg_image, 0, 0);
 
             sketch.textFont(movie_font);
-            sketch.textSize(150);
+            sketch.textSize(160);
 
-            let mycolor = sketch.color(240, 188, 115);
+            let mycolor = sketch.color(103, 63, 51);
             sketch.fill(mycolor);
 
             sketch.textAlign(sketch.CENTER, sketch.CENTER);
-            sketch.text(yourname,250, 900);
+            sketch.text(yourname.toLowerCase(), 535,50);
 
             if(check) {
             	img_preview.style.display = "block";
             	img_preview.src = myCanvas.elt.toDataURL();
+
+                document.getElementById("downloadBtn").style.display = "block";
+                document.getElementById("previewBtn").style.display = "none";
+                document.getElementById("loading").style.display = "none";
             }
             };
 
@@ -152,17 +152,14 @@
             btn_reset.onclick = () => {
             document.getElementById("downloadBtn").style.display = "none";
             document.getElementById("previewBtn").style.display = "block";
-            document.getElementById("yourname").value="";
-            img_preview.src = "images/Master.jpg";
+            document.getElementById("yourname").value = "";
+            img_preview.src = "./images/Sooraraipottru_yourname.jpg";
             };
             };
 
             function init() {
             let myp5 = new p5(s, document.getElementById("myCanvas"));
-
-            document.getElementById("downloadBtn").style.display = "block";
-            document.getElementById("previewBtn").style.display = "none";
-
+            document.getElementById("loading").style.display = "block";
             check = true;
             }
 
