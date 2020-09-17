@@ -35,6 +35,7 @@
                 <div class="col-md-6" class="my-card"  data-aos="fade-right" data-aos-duration="1300" data-aos-once="true">
                     <img class="img-thumbnail" src="images/SooraraiPottru_yourname.jpg" id="imgyourname">
                     <img class="img-thumbnail" id="imgpreview" style="display: none;">
+                    <div id="snackbar">Image downloading!..</div>
                 </div>
                 <br>
                 <br>
@@ -118,7 +119,7 @@
             let btn_reset = document.getElementById("resetBtn");
 
             sketch.preload = () => {
-            bg_image = sketch.loadImage("images/Sooraraipottru.jpg");
+            bg_image = sketch.loadImage("images/SooraraiPottru.jpg");
             movie_font = sketch.loadFont("fonts/Sooraraipottrufont.ttf");
             };
 
@@ -146,6 +147,9 @@
             };
 
             btn_download.onclick = () => {
+            let toast = document.getElementById("snackbar");
+            toast.className = "show";
+            setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
             sketch.saveCanvas(yourname, "jpg");
             };
 
