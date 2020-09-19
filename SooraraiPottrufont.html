@@ -103,7 +103,7 @@
             </div>
         </footer>
         <!-- Snackbar -->
-        <div id="snackbar">Image downloading!..</div> 
+        <div id="snackbar">Image downloading!..</div>
         <script type="text/javascript">
             AOS.init();
 
@@ -120,8 +120,8 @@
             let btn_reset = document.getElementById("resetBtn");
 
             sketch.preload = () => {
-            bg_image = sketch.loadImage("images/SooraraiPottru.jpg");
-            movie_font = sketch.loadFont("fonts/Sooraraipottrufont.ttf");
+            bg_image = sketch.loadImage("./images/SooraraiPottru.jpg");
+            movie_font = sketch.loadFont("./fonts/Sooraraipottrufont.ttf");
             };
 
             sketch.setup = () => {
@@ -150,8 +150,7 @@
             btn_download.onclick = () => {
             let toast = document.getElementById("snackbar");
             toast.className = "show";
-            setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 5000);
-            
+            setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
             sketch.saveCanvas("moviestyle-"+yourname+"-SooraraiPottru", "jpg");
             };
 
@@ -159,7 +158,7 @@
             document.getElementById("downloadBtn").style.display = "none";
             document.getElementById("previewBtn").style.display = "block";
             document.getElementById("yourname").value = "";
-            img_preview.src = "./images/Sooraraipottru_yourname.jpg";
+            img_preview.src = "./images/SooraraiPottru.jpg";
             };
             };
 
