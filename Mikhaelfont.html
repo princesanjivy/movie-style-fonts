@@ -3,13 +3,13 @@
     <head>
         <title>Movie Style Fonts - Mikhael</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        
+
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
-        
+
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <link rel="stylesheet" href="styles.css">
@@ -107,21 +107,23 @@
                 </div>
             </div>
         </footer>
+        <!-- Snackbar -->
+        <div id="snackbar">Image downloading!..</div>
         <script type="text/javascript">
             AOS.init();
-            
+
             let check = false;
-            
+
             const s = (sketch) => {
             let bg_image, movie_font_left, movie_font_right;
             let myCanvas;
-            
+
             let yourname = document.getElementById("yourname").value;
             let btn_download = document.getElementById("downloadBtn");
             let btn_preview = document.getElementById("previewBtn");
             let img_preview = document.getElementById("imgyourname");
             let btn_reset = document.getElementById("resetBtn");
-            
+
             yourname = yourname.toLowerCase();
 
             sketch.preload = () => {
@@ -129,48 +131,51 @@
             movie_font_left = sketch.loadFont("fonts/Mikhael_left.ttf");
             // movie_font_right = sketch.loadFont("fonts/Mikhael_right.ttf");
             };
-            
+
             sketch.setup = () => {
             myCanvas = sketch.createCanvas(bg_image.width, bg_image.height);
             sketch.image(bg_image, 0, 0);
 
             sketch.textFont(movie_font_left);
             sketch.textSize(160);
-            
+
             let mycolor = sketch.color(138,151,141);
             sketch.fill(mycolor);
-            
+
             sketch.textAlign(sketch.CENTER, sketch.CENTER);
             sketch.text(yourname, 500, 300);
-            
+
             if(check) {
                 img_preview.style.display = "block";
                 img_preview.src = myCanvas.elt.toDataURL();
-                
+
                 document.getElementById("downloadBtn").style.display = "block";
                 document.getElementById("previewBtn").style.display = "none";
                 document.getElementById("loading").style.display = "none";
             }
             };
-            
+
             btn_download.onclick = () => {
-            sketch.saveCanvas(yourname, "jpg");
+              let toast = document.getElementById("snackbar");
+                          toast.className = "show";
+                          setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+
+            sketch.saveCanvas("moviestyle-"+yourname+"-Mikhael", "jpg");
             };
-            
+
             btn_reset.onclick = () => {
             document.getElementById("downloadBtn").style.display = "none";
             document.getElementById("previewBtn").style.display = "block";
             img_preview.src = "images/Mikhael.jpg";
             };
             };
-            
+
             function init() {
             let myp5 = new p5(s, document.getElementById("myCanvas"));
             document.getElementById("loading").style.display = "block";
             check = true;
             }
-            
+
         </script>
     </body>
 </html>
-

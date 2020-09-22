@@ -95,7 +95,7 @@
                             </a>
                             </i>
                         </div>
-                    </center> 
+                    </center>
                 </div>
                 <br><br>
                 <div style="padding-left: 10px; color: white; font-family: Footer;">
@@ -107,6 +107,7 @@
         </footer>
         <!-- Snackbar -->
         <div id="snackbar">Image downloading!..</div>
+
         <script type="text/javascript">
             AOS.init();
 
@@ -151,10 +152,10 @@
             };
 
             btn_download.onclick = () => {
-            sketch.saveCanvas("moviestyle-"+yourname+"-Avengers", "jpg");
-            let toast = document.getElementById("snackbar")
+            let toast = document.getElementById("snackbar");
             toast.className = "show";
             setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+            sketch.saveCanvas("moviestyle-"+yourname+"-AvengersEndGame", "jpg");
             };
 
             btn_reset.onclick = () => {

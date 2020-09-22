@@ -120,8 +120,8 @@
             let btn_reset = document.getElementById("resetBtn");
 
             sketch.preload = () => {
-            bg_image = sketch.loadImage("./images/SooraraiPottru.jpg");
-            movie_font = sketch.loadFont("./fonts/Sooraraipottrufont.ttf");
+            bg_image = sketch.loadImage("images/SooraraiPottru.jpg");
+            movie_font = sketch.loadFont("fonts/Sooraraipottrufont.ttf");
             };
 
             sketch.setup = () => {
@@ -151,7 +151,8 @@
             let toast = document.getElementById("snackbar");
             toast.className = "show";
             setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
-            sketch.saveCanvas("moviestyle-"+yourname+"-SooraraiPottru", "jpg");
+
+            sketch.saveCanvas(yourname, "jpg");
             };
 
             btn_reset.onclick = () => {

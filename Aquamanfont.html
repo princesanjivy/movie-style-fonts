@@ -3,13 +3,13 @@
     <head>
         <title>Movie Style Fonts - Aquaman</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        
+
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
-        
+
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <link rel="stylesheet" href="styles.css">
@@ -107,15 +107,18 @@
                 </div>
             </div>
         </footer>
+        <!-- Snackbar -->
+        <div id="snackbar">Image downloading!..</div>
+
         <script type="text/javascript">
             AOS.init();
-            
+
             let check = false;
-            
+
             const s = (sketch) => {
             let bg_image, movie_font;
             let myCanvas;
-            
+
             let yourname = document.getElementById("yourname").value;
             let btn_download = document.getElementById("downloadBtn");
             let btn_preview = document.getElementById("previewBtn");
@@ -130,64 +133,67 @@
                     newYourname += yourname[i];
             }
             yourname = newYourname;
-            
+
             sketch.preload = () => {
             bg_image = sketch.loadImage("images/Aquaman.jpg");
             movie_font = sketch.loadFont("fonts/Aquamanfont.ttf");
             };
-            
+
             sketch.setup = () => {
             myCanvas = sketch.createCanvas(bg_image.width, bg_image.height);
             sketch.image(bg_image, 0, 0);
 
             sketch.textFont(movie_font);
             sketch.textSize(140);
-            
+
             let my1color = sketch.color(183,168,90);
             sketch.fill(my1color);
-            
+
             sketch.textAlign(sketch.CENTER, sketch.CENTER);
             sketch.text(yourname.toUpperCase(), 960, 500);
 
             // ----------------------------------- //
-            
+
             sketch.textFont(movie_font);
             sketch.textSize(140);
-            
+
             let my2color = sketch.color(200,200,200);
             sketch.fill(my2color);
-            
+
             sketch.textAlign(sketch.CENTER, sketch.CENTER);
             sketch.text(yourname.toUpperCase(), 948, 500);
-            
+
             if(check) {
                 img_preview.style.display = "block";
                 img_preview.src = myCanvas.elt.toDataURL();
-                
+
                 document.getElementById("downloadBtn").style.display = "block";
                 document.getElementById("previewBtn").style.display = "none";
                 document.getElementById("loading").style.display = "none";
             }
             };
-            
+
             btn_download.onclick = () => {
-            sketch.saveCanvas(yourname.toUpperCase(), "jpg");
+            let toast = document.getElementById("snackbar");
+            toast.className = "show";
+            setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+
+            sketch.saveCanvas("moviestyle-"+yourname.toUpperCase()+"-Aquaman", "jpg");
             };
-            
+
             btn_reset.onclick = () => {
             document.getElementById("downloadBtn").style.display = "none";
             document.getElementById("previewBtn").style.display = "block";
             img_preview.src = "images/Aquaman.jpg";
             };
             };
-            
+
             function init() {
             let myp5 = new p5(s, document.getElementById("myCanvas"));
             document.getElementById("loading").style.display = "block";
             check = true;
             }
-            
+
         </script>
     </body>
 </html>
-
