@@ -103,7 +103,7 @@
             </div>
         </footer>
         <!-- Snackbar -->
-        <div id="snackbar">Image downloading!..</div> 
+        <div id="snackbar">Image downloading!..</div>
         <script type="text/javascript">
             AOS.init();
 
@@ -150,8 +150,8 @@
             btn_download.onclick = () => {
             let toast = document.getElementById("snackbar");
             toast.className = "show";
-            setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 5000);
-            
+            setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+
             sketch.saveCanvas(yourname, "jpg");
             };
 
@@ -159,7 +159,7 @@
             document.getElementById("downloadBtn").style.display = "none";
             document.getElementById("previewBtn").style.display = "block";
             document.getElementById("yourname").value = "";
-            img_preview.src = "./images/Sooraraipottru_yourname.jpg";
+            img_preview.src = "./images/SooraraiPottru.jpg";
             };
             };
 
