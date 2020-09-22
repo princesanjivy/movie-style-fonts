@@ -102,12 +102,15 @@
                 </div>
             </div>
         </footer>
+        <!-- Snackbar -->
+        <div id="snackbar">Image downloading!..</div>
+
         <script type="text/javascript">
             AOS.init();
 
             let check = false;
 
-            const s = (sketch) => { 
+            const s = (sketch) => {
             let bg_image, movie_font;
             let myCanvas;
 
@@ -146,7 +149,10 @@
             };
 
             btn_download.onclick = () => {
-            sketch.saveCanvas(yourname, "jpg");
+              let toast = document.getElementById("snackbar");
+                          toast.className = "show";
+                          setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+            sketch.saveCanvas("moviestyle-"+yourname+"-JurassicPark", "jpg");
             };
 
             btn_reset.onclick = () => {

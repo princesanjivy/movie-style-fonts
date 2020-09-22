@@ -86,7 +86,7 @@
                             <i class="fa fa-facebook" style="color: white;">
                             <a href="https://www.facebook.com/princewebstudio/" target="_blank" style="font-family: Footer; font-weight: bolder; color: white; text-decoration: none;">
                             Facebook
-                            </a> 
+                            </a>
                             </i>
                         </div>
                         <!-- Instagram -->
@@ -107,6 +107,9 @@
                 </div>
             </div>
         </footer>
+        <!-- Snackbar -->
+        <div id="snackbar">Image downloading!..</div>
+
         <script type="text/javascript">
             AOS.init();
 
@@ -151,7 +154,10 @@
             };
 
             btn_download.onclick = () => {
-            sketch.saveCanvas(yourname, "jpg");
+              let toast = document.getElementById("snackbar");
+              toast.className = "show";
+              setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+            sketch.saveCanvas("moviestyle-"+yourname+"-Bigil", "jpg");
             };
 
             btn_reset.onclick = () => {

@@ -105,6 +105,9 @@
                 </div>
             </div>
         </footer>
+        <!-- Snackbar -->
+        <div id="snackbar">Image downloading!..</div>
+
         <script type="text/javascript">
             AOS.init();
 
@@ -121,7 +124,7 @@
             let btn_reset = document.getElementById("resetBtn");
 
             sketch.preload = () => {
-            bg_image = sketch.loadImage("./images/Avengers_EndGame.jpg");
+            bg_image = sketch.loadImage("./images/AvengersEndGame.jpg");
             movie_font = sketch.loadFont("./fonts/Avengersfont.ttf");
             };
 
@@ -149,14 +152,17 @@
             };
 
             btn_download.onclick = () => {
-            sketch.saveCanvas(yourname, "jpg");
+            let toast = document.getElementById("snackbar");
+            toast.className = "show";
+            setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+            sketch.saveCanvas("moviestyle-"+yourname+"-AvengersEndGame", "jpg");
             };
 
             btn_reset.onclick = () => {
             document.getElementById("downloadBtn").style.display = "none";
             document.getElementById("previewBtn").style.display = "block";
             document.getElementById("yourname").value = "";
-            img_preview.src = "./images/Avengers_EndGame.jpg";
+            img_preview.src = "./images/AvengersEndGame.jpg";
             };
             };
 

@@ -107,6 +107,8 @@
                 </div>
             </div>
         </footer>
+        <!-- Snackbar -->
+        <div id="snackbar">Image downloading!..</div>
         <script type="text/javascript">
             AOS.init();
 
@@ -125,13 +127,13 @@
             yourname = yourname.toUpperCase();
 
             sketch.preload = () => {
-            bg_image = sketch.loadImage("images/Mission_Impossible.jpg");
+            bg_image = sketch.loadImage("images/MissionImpossible.jpg");
             movie_font = sketch.loadFont("fonts/Mission_Impossiblefont.ttf");
             };
 
             sketch.setup = () => {
             myCanvas = sketch.createCanvas(bg_image.width, bg_image.height);
-            sketch.image(bg_image, 0, 0);   
+            sketch.image(bg_image, 0, 0);
 
             sketch.textFont(movie_font);
             sketch.textSize(210);
@@ -153,13 +155,17 @@
             };
 
             btn_download.onclick = () => {
-            sketch.saveCanvas(yourname, "jpg");
+              let toast = document.getElementById("snackbar");
+                          toast.className = "show";
+                          setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+
+            sketch.saveCanvas("moviestyle-"+yourname+"-MissionImpossible", "jpg");
             };
 
             btn_reset.onclick = () => {
             document.getElementById("downloadBtn").style.display = "none";
             document.getElementById("previewBtn").style.display = "block";
-            img_preview.src = "images/Mission_Impossible.jpg";
+            img_preview.src = "images/MissionImpossible.jpg";
             };
             };
 
