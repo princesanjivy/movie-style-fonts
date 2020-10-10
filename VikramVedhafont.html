@@ -56,7 +56,7 @@
                     <p style="font-size: 22px; font-weight: bolder; color: 	#4d4d4d;">Enter your name</p>
                     <div id="myCanvas" style="display: none;"></div>
                     <form>
-                        <input type="text" placeholder="Firs tName" id="firstName" maxlength="15" required>
+                        <input type="text" placeholder="First Name" id="firstName" maxlength="15" required>
                         <input type="text" placeholder="Last Name" id="lastName" maxlength="15" required>
                         <input type="button" value="Preview" class="btn" onclick="init()" id="previewBtn" style="display: inline-block; position: relative">
                         <img src="images/loader.gif" style="display: none;" id="loading">
@@ -121,7 +121,10 @@
 
                     let name = document.getElementById("firstName").value;
                     let lastname = document.getElementById("lastName").value;
-
+                    
+                    name = name.toLowerCase();
+                    lastname = lastname.toLowerCase();
+                        
                     let btn_download = document.getElementById("downloadBtn");
                     let btn_preview = document.getElementById("previewBtn");
                     let img_preview = document.getElementById("imgyourname");
@@ -139,37 +142,37 @@
 
                       let x_up = bg_image.width/2-(name.length*20);
           				let x_down = bg_image.width/2-(lastname.length*20);
-          				fill("white");
+          				sketch.fill("white");
 
                       //up
           for (let i = 0; i < name.length; i++) {
             if(i==2){
-              textFont(movie_font_up);
-              textSize(150);
-              text(name[i].toUpperCase(), x_up, 805);
-              x_up += textWidth(name[i])-10;
+              sketch.textFont(movie_font_up);
+              sketch.textSize(150);
+              sketch.text(name[i].toUpperCase(), x_up, 805);
+              x_up += sketch.textWidth(name[i])-10;
             }
             else{
-              textFont(movie_font_up);
-              textSize(150);
-              text(name[i], x_up, 800);
-              x_up += textWidth(name[i])-10;
+              sketch.textFont(movie_font_up);
+              sketch.textSize(150);
+              sketch.text(name[i], x_up, 800);
+              x_up += sketch.textWidth(name[i])-10;
             }
           }
 
           //down
           for (let i = 0; i < lastname.length; i++) {
             if(i==3){
-              textFont(movie_font_down);
-              textSize(150);
-              text(lastname[i].toUpperCase(), x_down-70, 950);
-              x_down += textWidth(lastname[i])-10;
+              sketch.textFont(movie_font_down);
+              sketch.textSize(150);
+              sketch.text(lastname[i].toUpperCase(), x_down-70, 950);
+              x_down += sketch.textWidth(lastname[i])-10;
             }
             else{
-              textFont(movie_font_down);
-              textSize(150);
-              text(lastname[i], x_down, 920);
-              x_down += textWidth(lastname[i])-10;
+              sketch.textFont(movie_font_down);
+              sketch.textSize(150);
+              sketch.text(lastname[i], x_down, 920);
+              x_down += sketch.textWidth(lastname[i])-10;
             }
           }
 
